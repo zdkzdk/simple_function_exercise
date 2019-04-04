@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table tr td{
+            border:1px solid blue;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            var psd = document.getElementsByName("psd")[0];
+            var repp = document.getElementsByName("repp")[0];
+            var reppspan = document.getElementById("reppspan");
+            var agespan = document.getElementById("agespan");
+            repp.onblur = function () {
+                if (psd.value == repp.value) {
+                    reppspan.innerHTML="";
+
+                } else {
+                    reppspan.innerText = "两次密码不一样";
+                }
+            }
+            var age = document.getElementsByName("age")[0];
+            age.onblur = function () {
+                var reg = new RegExp("^[0-9]*$");
+                if (reg.test(age.value)) {
+                    agespan.innerText = "";
+                } else {
+                    agespan.innerText = "必须为数字";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<form method="get" action="#">
+    <table >
+        <tr>
+            <td>姓名</td>
+            <td><input type="text" name="name"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="password" name="psd"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>重复密码</td>
+            <td><input type="password" name="repp"/></td>
+            <td><span id="reppspan" ></span></td>
+        </tr>
+        <tr>
+            <td>年龄</td>
+            <td><input type="text" name="age"/></td>
+            <td><span id="agespan"></span></td>
+        </tr>
+        <tr>
+            <td>性别</td>
+            <td>男<input type="radio" name="gender"/>女<input type="radio" name="gender"/></td>
+        </tr>
+        <tr>
+            <td>爱好</td>
+            <td><input type="checkbox"/>足球 <input type="checkbox"/>篮球 <input type="checkbox"/>羽毛球 <input
+                    type="checkbox"/>乒乓球
+            </td>
+        </tr>
+        <tr>
+            <td>班级</td>
+            <td>
+                <select>
+                    <option>一年级一班</option>
+                    <option>一年级二班</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="reset" value="重置"/></td>
+            <td><input type="submit" value="提交"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

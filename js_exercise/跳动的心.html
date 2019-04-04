@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            border: 1px solid crimson;
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            box-shadow: 0 0 10px #f00;
+            -webkit-animation:ani1 1s infinite; /* Safari and Chrome */
+        }
+        #div1{
+            border-radius: 50%;
+            position: fixed;
+
+        }
+        #div2{
+            margin-left: 100px;
+            border-radius: 50%;
+            position: fixed;
+            top: 1px;
+        }
+        #div3{
+            transform: rotate(45deg) ;
+            position: fixed;
+            left: 60px;
+            top: 40px;
+        }
+        @keyframes ani1 {
+            0%{
+                transform: scale(1) rotate(45deg);
+            }
+            50%{
+                transform: scale(1.1)  rotate(45deg);
+            }
+            100%{
+                transform: scale(1.2)  rotate(45deg);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>

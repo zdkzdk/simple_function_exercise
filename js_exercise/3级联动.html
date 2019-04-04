@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            /*
+        * 3级联动
+        * 1.单向
+        * 2.上级限制下级的取值范围
+        * 3.页面加载完就要根据默认值执行一次
+        * */
+            //构造option
+            var address = function (value, name) {
+                return $('<option value=' + value + '>' + name + '</option>');
+            }
+            var opJN = address("jn", "济南");
+            var opLY = address("ly", "临沂");
+            var opDC = address("dc", "东城");
+            var opXC = address("xc", "西城");
+            var opZQ = address("zq", "章丘");
+            var opLX = address("lx", "历下");
+            var opYS = address("ys", "沂水");
+            var opGC = address("gc", "故宫");
+            var opCC = address("cc", "长城");
+
+
+            //根据高一级的选择把获取的options添加到低一级的select中
+
+            var addLower = function (high, low) {
+
+                var option = high.find('option:selected');
+                var highVal = option.val();
+                var lowOptions = getLower(highVal);
+                low.empty();
+                for (var i in lowOptions) {
+                    low.append(lowOptions[i]);
+                }
+            }
+
+
+            //根据高一级的选择获取低级的options
+            var getLower = function (highValue) {
+                if (highValue == "sd") {
+                    return [opJN, opLY];
+                }
+                if (highValue == "bj") {
+                    return [opDC, opXC];
+                }
+                if (highValue == "jn") {
+                    return [opZQ, opLX];
+                }
+                if (highValue == "ly") {
+                    return [opYS];
+                }
+                if (highValue == "dc") {
+                    return [opGC];
+                }
+                if (highValue == "xc") {
+                    return [opCC];
+                }
+            }
+
+            //高级选择时，低级根据高级选择动态添加对应option
+            addLower($('#province'), $('#city'));
+            addLower($('#city'), $('#county'));
+            $('#province').on('change', function () {
+                addLower($(this), $('#city')); //这里一定要用$(this)，不要直接用this
+                addLower($('#city'), $('#county'));
+            })
+            $('#city').on('change', function () {
+                addLower($(this), $('#county'));
+            })
+
+        })
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <select id="province">
+                <option value="sd" selected="selected">山东</option>
+                <option value="bj">北京</option>
+            </select>
+        </td>
+        <td>
+            <select id="city">
+
+            </select>
+        </td>
+        <td>
+            <select id="county">
+
+            </select>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

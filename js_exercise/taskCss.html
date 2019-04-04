@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+
+        }
+
+        tr {
+            cellspacing: 0px;
+        }
+
+        td {
+            border: 1px solid blue;
+
+        }
+
+        table td:nth-child(2) {
+            background-color: blue;
+        }
+
+        #div2 div {
+            width: 300px;
+            height: 300px;
+        }
+
+        #div3 div {
+            align-content: center;
+        }
+
+        .container {
+            margin-top: 500px;
+            width: 800px;
+            border: 1px solid #000;
+            padding: 10px;
+        }
+
+        /* body的全部对象的对齐方式居中。
+         盒子container的属性，width:800px,边框1px,实线，颜色#000，填充10px.
+         盒子banner的属性，text-align居中，下边界5px,边框1px，实线，颜色#000，填充10px,background-color:#ffcc33.
+         盒子content的属性，text-align居中，width：570px,heigh:300px,边框1px 实线 颜色#000，填充10px.
+         盒子link的属性，text-align居中，边框1px 实线  颜色#000.
+         盒子footer的属性，text-align居中，边框1px 实线 颜色#000；填充10px;*/
+
+        .banner {
+            text-align: center;
+            padding-bottom: 5px;
+            border: 1px solid #060706;
+            border-bottom:10px solid #c6efcb;
+            padding: 10px;
+            background-color: #ffcc33;
+
+        }
+
+        .content {
+            text-align: center;
+            border: 1px solid #c6efcb;
+            background-color: #ffcc33;
+            width: 570px;
+            height: 300px;
+            padding: 10px;
+
+            margin-top: 10px;
+            margin-bottom: 10px;
+            float: left;
+        }
+
+        .link {
+            text-align: center;
+            border: 1px solid #000;
+
+
+            float: left;
+            width: 150px;
+            height: 300px;
+            margin-top: 10px;
+            margin-left: 10px;
+
+        }
+
+        .footer {
+            text-align: center;
+            border: 1px solid #000;
+            padding: 10px;
+
+            margin-top: 370px;
+            border-top: 10px solid #c6efcb;
+
+        }
+    </style>
+
+
+</head>
+<body>
+<!--1-->
+<div>
+
+    <table>
+        <tr>
+            <td>红色</td>
+            <td>蓝色</td>
+            <td>绿色</td>
+        </tr>
+    </table>
+</div>
+<hr/>
+<!--2-->
+<div id="div2">
+    <div style="border:2px solid #333; background-color: #ffc33c;float: left"></div>
+    <div style="border:2px solid #333; background-color: #ff33cc;float: left;margin-left: 50px"></div>
+    <div style="border:2px solid #333; background-color: #ff33cc;float: left;position: absolute;left: 700px;"></div>
+</div>
+
+<!--3-->
+
+<div class="container">
+    <div class="banner">banner</div>
+    <div class="content">content</div>
+    <div class="link">link</div>
+    <div class="footer">footer</div>
+</div>
+
+
+<!--4-->
+<div id="div4">
+    <div></div>
+
+
+</div>
+</body>
+</html>
