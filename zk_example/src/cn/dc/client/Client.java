@@ -53,7 +53,6 @@ public class Client {
             }
             Thread.sleep(2000);
         }
-
     }
 
     private static void getUrlList() throws KeeperException, InterruptedException {
