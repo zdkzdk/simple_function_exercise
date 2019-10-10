@@ -1,0 +1,3 @@
+hadoop	c.txt-->2	b.txt-->2	a.txt-->3	
+hdfs	c.txt-->1	b.txt-->3	a.txt-->1	
+mr	c.txt-->1	b.txt-->1	a.txt-->2	
