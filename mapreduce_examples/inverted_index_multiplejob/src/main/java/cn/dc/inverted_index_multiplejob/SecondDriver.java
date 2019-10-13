@@ -11,7 +11,7 @@ public class SecondDriver {
     public static void main(String[] args) throws Exception {
 
         // 输入输出路径需要根据自己电脑上实际的输入输出路径设置
-        args = new String[] { "mapreduce_examples/inverted_index_multiplejob/output1", "mapreduce_examples/inverted_index_multiplejob/output2" };
+        args = new String[]{"mapreduce_examples/inverted_index_multiplejob/output1", "mapreduce_examples/inverted_index_multiplejob/output2"};
 
         Configuration config = new Configuration();
         Job job = Job.getInstance(config);
@@ -30,7 +30,7 @@ public class SecondDriver {
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         boolean result = job.waitForCompletion(true);
-        System.exit(result?0:1);
+        System.exit(result ? 0 : 1);
     }
 
 }

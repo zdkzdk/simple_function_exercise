@@ -13,7 +13,7 @@ import java.io.IOException;
 public class FirstDriver {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         // 输入输出路径需要根据自己电脑上实际的输入输出路径设置
-        args = new String[] { "mapreduce_examples/inverted_index_multiplejob/source_file", "mapreduce_examples/inverted_index_multiplejob/output1" };
+        args = new String[]{"mapreduce_examples/inverted_index_multiplejob/source_file", "mapreduce_examples/inverted_index_multiplejob/output1"};
 
         Configuration conf = new Configuration();
 

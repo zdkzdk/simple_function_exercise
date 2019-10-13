@@ -22,6 +22,7 @@ public class FirstMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
         FileSplit split = (FileSplit) context.getInputSplit();
         this.fileName = split.getPath().getName();
     }
+
     /*
     把一个单词数据转为 单词--文件名 1 的形式
          note：
