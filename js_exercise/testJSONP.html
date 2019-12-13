@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testJSONP</title>
+</head>
+<body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+    $(function () {
+        $.ajax({
+            url : "http://localhost:8080/jsonp",
+            type : "GET",
+            dataType : "jsonp", //只要将dataType设置为jsonp即可，其他的参数设置不需要修改
+            success : function(data){
+                alert(data);
+            }
+
+        })
+    })
+</script>
+</body>
+</html>
