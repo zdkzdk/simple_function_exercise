@@ -1,4 +1,4 @@
-package cn.dc.commonfunction;
+package cn.dc.algorithmskills;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
